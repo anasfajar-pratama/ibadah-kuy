@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold-50:  #fffbeb;
+    --gold-100: #fef3c7;
+    --gold-200: #fde68a;
+    --gold-300: #fcd34d;
+    --gold-400: #fbbf24;
+    --gold-500: #D4A017;
+    --gold-600: #C8860A;
+    --gold-700: #B8730A;
+    --gold-800: #92400e;
+    --gold-900: #78350f;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  /* Navigation */
+  .nav-link {
+    @apply px-4 py-2 text-gray-600 font-medium rounded-lg hover:bg-gold-50 hover:text-gold-700 transition-colors duration-200 text-sm;
+  }
+  .nav-link.active {
+    @apply bg-gold-50 text-gold-700;
+  }
+  .mobile-nav-link {
+    @apply px-4 py-3 text-gray-700 font-medium hover:bg-gold-50 hover:text-gold-700 rounded-lg transition-colors text-sm;
+  }
+  .dropdown-item {
+    @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gold-50 hover:text-gold-700 transition-colors;
+  }
+
+  /* Buttons */
+  .btn-gold {
+    @apply bg-gold-500 text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-gold-600 transition-colors duration-200 inline-flex items-center gap-2;
+  }
+  .btn-gold-outline {
+    @apply border-2 border-gold-500 text-gold-600 font-semibold px-6 py-2.5 rounded-lg hover:bg-gold-500 hover:text-white transition-colors duration-200 inline-flex items-center gap-2;
+  }
+  .btn-white {
+    @apply bg-white text-gold-700 font-semibold px-6 py-2.5 rounded-lg hover:bg-gold-50 transition-colors duration-200 inline-flex items-center gap-2;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300;
+  }
+  .card-gold {
+    @apply bg-gradient-to-br from-gold-50 to-amber-50 border border-gold-200 rounded-2xl p-6;
+  }
+
+  /* Section */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-800 mb-2;
+  }
+  .section-subtitle {
+    @apply text-gray-500 text-lg;
+  }
+  .section-gold-line {
+    @apply w-16 h-1 bg-gold-500 rounded-full my-4;
+  }
+
+  /* Badge */
+  .badge-gold {
+    @apply bg-gold-100 text-gold-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+  .badge-green {
+    @apply bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  /* Paket Card */
+  .paket-card {
+    @apply card cursor-pointer;
+  }
+  .paket-card .paket-image {
+    @apply w-full h-48 object-cover transition-transform duration-300;
+  }
+  .paket-card:hover .paket-image {
+    transform: scale(1.05);
+  }
+
+  /* Hero */
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-black/60 to-black/30;
+  }
+
+  /* Star rating */
+  .star-filled { @apply text-gold-400; }
+  .star-empty  { @apply text-gray-300; }
+
+  /* Placeholder image wrapper */
+  .img-placeholder {
+    @apply bg-gradient-to-br from-gold-100 to-amber-100 flex items-center justify-center;
+  }
+}
+
+/* Custom Tailwind colors for gold */
+@layer utilities {
+  .bg-gold-50  { background-color: var(--gold-50); }
+  .bg-gold-100 { background-color: var(--gold-100); }
+  .bg-gold-200 { background-color: var(--gold-200); }
+  .bg-gold-300 { background-color: var(--gold-300); }
+  .bg-gold-400 { background-color: var(--gold-400); }
+  .bg-gold-500 { background-color: var(--gold-500); }
+  .bg-gold-600 { background-color: var(--gold-600); }
+  .bg-gold-700 { background-color: var(--gold-700); }
+  .bg-gold-800 { background-color: var(--gold-800); }
+  .bg-gold-900 { background-color: var(--gold-900); }
+
+  .text-gold-100 { color: var(--gold-100); }
+  .text-gold-200 { color: var(--gold-200); }
+  .text-gold-300 { color: var(--gold-300); }
+  .text-gold-400 { color: var(--gold-400); }
+  .text-gold-500 { color: var(--gold-500); }
+  .text-gold-600 { color: var(--gold-600); }
+  .text-gold-700 { color: var(--gold-700); }
+  .text-gold-800 { color: var(--gold-800); }
+  .text-gold-900 { color: var(--gold-900); }
+
+  .border-gold-100 { border-color: var(--gold-100); }
+  .border-gold-200 { border-color: var(--gold-200); }
+  .border-gold-500 { border-color: var(--gold-500); }
+  .border-gold-700 { border-color: var(--gold-700); }
+
+  .hover\:bg-gold-50:hover  { background-color: var(--gold-50); }
+  .hover\:bg-gold-500:hover { background-color: var(--gold-500); }
+  .hover\:bg-gold-600:hover { background-color: var(--gold-600); }
+  .hover\:text-gold-700:hover { color: var(--gold-700); }
+  .hover\:text-white:hover  { color: #fff; }
+
+  .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+}
+
+/* Swiper customization */
+.swiper-pagination-bullet-active {
+  background: var(--gold-500) !important;
+}
+.swiper-button-next, .swiper-button-prev {
+  color: var(--gold-500) !important;
+}

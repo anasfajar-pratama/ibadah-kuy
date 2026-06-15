@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /storage/jamaah/
+Allow: /
+
+Sitemap: https://ibadahkuy.com/sitemap.xml

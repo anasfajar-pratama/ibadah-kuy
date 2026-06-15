@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('galeris', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul');
+            $table->text('deskripsi')->nullable();
+            $table->string('gambar');
+            $table->string('gambar_thumbnail')->nullable();
+            $table->enum('kategori', ['ibadah', 'hotel', 'transportasi', 'kuliner', 'wisata', 'lainnya'])->default('lainnya');
+            $table->string('lokasi')->nullable();
+            $table->year('tahun')->nullable();
+            $table->boolean('is_featured')->default(false);
+            $table->boolean('is_aktif')->default(true);
+            $table->integer('urutan')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('galeris');
+    }
+};
